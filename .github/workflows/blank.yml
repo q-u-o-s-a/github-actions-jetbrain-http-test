@@ -31,10 +31,10 @@ jobs:
           node-version: '14'
       - name: Install
         run: 7z x httpx-linux-x86_64.zip
-      - name: List
+      - name: List directory
         run: ls -la
       - name: execute test
         run: chmod +x httpx
-             ./httpx --httpfile $GITHUB_WORKSPACE/tests/Http\ Requests/UserTests.http
+      - run: ./httpx --httpfile $GITHUB_WORKSPACE/tests/Http\ Requests/UserTests.http
         
 
