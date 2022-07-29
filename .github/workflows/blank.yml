@@ -24,17 +24,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
       - name: Get https
         run: wget https://github.com/servicex-sh/httpx/releases/download/v0.35.0/httpx-linux-x86_64.zip
-        
-      # Runs a single command using the runners shell
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
       - name: Install
         run: 7z x httpx-linux-x86_64.zip
-        
-      # Runs a single command using the runners shell
       - name: List
         run: ls -la
+      - name: execute test
+        run: chmod +x httpx
+             ./httpx --httpfile $GITHUB_WORKSPACE/tests/Http\ Requests/UserTests.http
         
 
