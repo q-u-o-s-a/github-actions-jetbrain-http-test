@@ -26,8 +26,12 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
+      - name: Get https
+        run: wget -o https://github.com/servicex-sh/httpx/releases/download/v0.35.0/httpx-linux-x86_64.zip
+        
+      # Runs a single command using the runners shell
       - name: Install
-        run: 7z x https://github.com/servicex-sh/httpx/releases/download/v0.35.0/httpx-linux-x86_64.zip
+        run: 7z x httpx-linux-x86_64.zip
         
       # Runs a single command using the runners shell
       - name: List
