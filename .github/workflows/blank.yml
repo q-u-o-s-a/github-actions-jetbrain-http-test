@@ -35,6 +35,6 @@ jobs:
         run: ls -la
       - name: execute test
         run: chmod +x httpx
-      - run: ./httpx --httpfile $GITHUB_WORKSPACE/tests/Http\ Requests/UserTests.http
+      - run: ./httpx --httpfile tests/Http\ Requests/UserTests.http
         
 
